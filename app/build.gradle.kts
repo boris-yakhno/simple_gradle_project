@@ -43,6 +43,12 @@ application {
     mainClass = "org.example.AppKt"
 }
 
+tasks.named("build") {
+    doFirst {
+        println("Kek: " + project.findProperty("kek"))
+    }
+}
+
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
